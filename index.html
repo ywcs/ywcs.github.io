@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>串串产量表</title>
+    <style>
+        /* 16:26 2018/10/29  23:26*/
+      *{margin:0;padding:0}
+     table{
+        border-collapse:collapse;border-spacing:0;
+        width:1000px;  
+        border:1px solid #ccc;
+        position:relative;
+        padding:6px;
+        overflow: hidden;
+
+     }
+      td,th{
+          border:1px solid #ccc;
+          text-align: center;
+          padding:4px;
+          
+      }
+      #each_total{
+          border:1px solid red;
+          width:500px;
+          
+      }
+      .last_tr{
+          position:absolute;
+          left: 940px;
+          top:0px;
+          background:#f0ad4e;
+          color:white;
+      }
+      .erery_totals{
+        background:#5cb85c;
+        color:white;
+      }
+      .all_total{
+          background:#f10215;
+          color:white;
+      }
+      .z_c{
+          background:#5bc0de;
+          color:white;
+      }
+      .j_q{
+          background:#5cb85c;
+          color:white;
+      }
+      .y_d{
+          background:#337ab7;
+          color:white;
+      }
+      #head{
+          width:979px;
+         
+          
+          border:1px dashed green;
+      }
+      #head h3{
+          font-size:20;
+          text-align:center;
+          border-bottom:1px solid red;
+      }
+      #head div{
+          float:left;
+          margin:4px;
+          padding:6px;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      .clearfix{zoom:1}
+      .clearfix:after{content:'';display:table;clear:both}
+      .active{
+          background:#f3181d;
+          color:white;
+      }
+    </style>
+</head>
+<body>
+    <header id="head" class='clearfix'>
+       <h3>10月产量表</h3>
+       <div class='tabs_cc tabs_wdx j_q'>王东旭</div>
+       <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
+       <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
+    </header>
+    <table id="CC_Tab">
+ 
+    </table>
+    <!-- <div id="each_total">
+        <div class='niu_du'></div>
+    </div> -->
+</body>
+<script>
+    var arr=[];
+    //CC_DATAS1  wdx
+    var CC_DATAS0={
+        //554
+         "1号":[1,1,1,1,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "2号":[1,1,1,1,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "3号":[1,1,1,1,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "4号":[1,1,1,1,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+    }
+    //CC_DATAS1  ywc
+    var CC_DATAS1={
+        //554
+         "1号":[1,2,3,4,5,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "2号":[1,2,3,250,260,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "3号":[220,230,240,250,260,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "4号":[1,3,240,4,261,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+    }
+        //CC_DATAS2 ly
+        var CC_DATAS2={
+        //554
+         "1号":[2,2,3,4,5,
+                1,2,0,4,5,
+                1,2,3,4
+               ],
+         "2号":[1,2,3,0,0,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "3号":[1,1,1,1,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+         "4号":[1,3,1,4,1,
+                1,2,3,4,5,
+                1,2,3,4
+               ],
+    }
+    var CC_DATA={
+         //554
+         "name":[
+             '日期/名称',
+             '牛肚','虾','海带','豆腐','鹅郡',
+             '鸭郡','黑毛肚','凤爪','豆皮','藕',
+             '笋子','木耳','土豆','西兰花'
+             ],    
+    }
+    arr.push(CC_DATAS0);
+    arr.push(CC_DATAS1);
+    arr.push(CC_DATAS2);
+    var CC=document.getElementById('head');
+    var allCC=CC.getElementsByTagName('div');
+    var CC_Tab=document.getElementById('CC_Tab');
+    var each_total=document.getElementById('each_total');
+
+    var str="";
+    for(var i in CC_DATA.name){
+         str+="<th>"+CC_DATA.name[i]+"</th>"
+    }
+    CC_Tab.innerHTML="<tr>"+str+"</tr>";
+
+    var ts=""
+    for(var j in CC_DATAS0){
+         ts+="<tr><td>"+j+"</td>"
+           for(var k=0;k<CC_DATAS0[j].length;k++){
+               ts+="<td class='list"+k+"'>"+CC_DATAS0[j][k]+"</td>"
+           }
+          "</tr>"
+    }
+    CC_Tab.innerHTML+=ts
+    window.onload=function(){
+        fn()
+    for(var i=0;i<allCC.length;i++){
+       allCC[i].index=i;
+       allCC[i].onclick=function(){
+        for(var k=0;k<allCC.length;k++){
+            allCC[k].className='j_q';
+        }
+        this.className='active';
+        CC_Tab.innerHTML="";
+        var str="";
+        for(var i in CC_DATA.name){
+            str+="<th>"+CC_DATA.name[i]+"</th>"
+        }
+        CC_Tab.innerHTML="<tr>"+str+"</tr>";
+    var ts=""
+    var tem=arr[this.index];
+    for(var j in tem){
+         ts+="<tr><td>"+j+"</td>"
+           for(var k=0;k<tem[j].length;k++){
+               ts+="<td class='list"+k+"'>"+tem[j][k]+"</td>"
+           }
+          "</tr>"
+    }
+    CC_Tab.innerHTML+=ts
+    fn()
+       }
+   }
+   function fn(){
+        var td2=CC_Tab.getElementsByClassName('list0');
+        var td3=CC_Tab.getElementsByClassName('list1');
+        var td4=CC_Tab.getElementsByClassName('list2');
+        var td5=CC_Tab.getElementsByClassName('list3');
+        var td6=CC_Tab.getElementsByClassName('list4');
+        var td7=CC_Tab.getElementsByClassName('list5');
+        var td8=CC_Tab.getElementsByClassName('list6');
+        var td9=CC_Tab.getElementsByClassName('list7');
+        var td10=CC_Tab.getElementsByClassName('list8');
+        var td11=CC_Tab.getElementsByClassName('list9');
+        var td12=CC_Tab.getElementsByClassName('list10');
+        var td13=CC_Tab.getElementsByClassName('list11');
+        var td14=CC_Tab.getElementsByClassName('list12');
+        var td15=CC_Tab.getElementsByClassName('list13');
+        var arrTotal=[];
+         var niudu_total=new Number();
+         var xia_total=new Number();
+         var haidai_total=new Number();
+         var doufu_total=new Number();
+         var erjun_total=new Number();
+         var yajun_total=new Number();
+         var heimaodu_total=new Number();
+         var fengzhua_total=new Number();
+         var doupi_total=new Number();
+         var ou_total=new Number();
+         var sunzi_total=new Number();
+         var muer_total=new Number();
+         var tudou_total=new Number();
+         var xilanhua_total=new Number();
+        for(var i=0;i<td2.length;i++){
+            niudu_total+=parseFloat(td2[i].innerHTML);
+        }
+        for(var i=0;i<td3.length;i++){
+             xia_total+=parseFloat(td3[i].innerHTML);
+        }
+        for(var i=0;i<td4.length;i++){
+             haidai_total+=parseFloat(td4[i].innerHTML);
+        }
+        for(var i=0;i<td5.length;i++){
+            doufu_total+=parseFloat(td5[i].innerHTML);
+        }
+        for(var i=0;i<td6.length;i++){
+            erjun_total+=parseFloat(td6[i].innerHTML);
+        }
+        for(var i=0;i<td7.length;i++){
+            yajun_total+=parseFloat(td7[i].innerHTML);
+        }
+        for(var i=0;i<td8.length;i++){
+            heimaodu_total+=parseFloat(td8[i].innerHTML);
+        }
+        for(var i=0;i<td9.length;i++){
+             fengzhua_total+=parseFloat(td9[i].innerHTML);
+        }
+        for(var i=0;i<td10.length;i++){
+            doupi_total+=parseFloat(td10[i].innerHTML);
+        }
+        for(var i=0;i<td11.length;i++){
+            ou_total+=parseFloat(td11[i].innerHTML);
+        }
+        
+        for(var i=0;i<td12.length;i++){
+             sunzi_total+=parseFloat(td12[i].innerHTML);
+        }
+        for(var i=0;i<td13.length;i++){
+             muer_total+=parseFloat(td13[i].innerHTML);
+        }
+        for(var i=0;i<td14.length;i++){
+            tudou_total+=parseFloat(td14[i].innerHTML);
+        }
+        for(var i=0;i<td15.length;i++){
+            xilanhua_total+=parseFloat(td15[i].innerHTML);
+        }
+         arrTotal.push(niudu_total)
+         arrTotal.push(xia_total)
+         arrTotal.push(haidai_total)
+         arrTotal.push(doufu_total)
+         arrTotal.push(erjun_total)
+         arrTotal.push(yajun_total)
+         arrTotal.push(heimaodu_total)
+         arrTotal.push(fengzhua_total)
+         arrTotal.push(doupi_total)
+         arrTotal.push(ou_total)
+         arrTotal.push(sunzi_total)
+         arrTotal.push(muer_total)
+         arrTotal.push(tudou_total)
+         arrTotal.push(xilanhua_total)
+         var str_z='';
+         var str_num=new Number;
+              for(var i=0;i<arrTotal.length;i++){
+                str_z+="<th>"+arrTotal[i]+"</th>";
+                str_num+=arrTotal[i];
+              }
+         CC_Tab.innerHTML+="<tr class='z_c'><th>总数</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
+         var all_total=document.getElementById('all_total');
+         
+         all_total.innerHTML=parseFloat(str_num);
+        var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+        var str_jq='';
+              for(var i=0;i<arrjq.length;i++){
+                str_jq+="<th>"+arrjq[i]+"</th>"
+              }
+         CC_Tab.innerHTML+="<tr class='j_q'><th>价钱</th>"+str_jq+"</tr>"
+         var priceTotal=new Array();
+         for(var u=0;u<arrTotal.length;u++){
+            priceTotal.push((arrTotal[u]*parseInt(arrjq[u]))/100);
+         }
+         var str_price_total='';
+         var str_salary=new Number();
+              for(var i=0;i<priceTotal.length;i++){
+                str_price_total+="<th>"+priceTotal[i]+"</th>";
+                str_salary+=priceTotal[i];
+              }
+         CC_Tab.innerHTML+="<tr class='y_d'><th>工资</th>"+str_price_total+"<td id='end_salary' class='end_salary all_total'>3000</td></tr>"
+         var end_salary=document.getElementById('end_salary');
+         function fixNumberDecimalDigits(number, digits) {
+            var formatNumber = parseFloat(number);
+            if (isNaN(formatNumber)) return false;
+
+            var digits = digits || 2;
+            formatNumber = formatNumber.toString();
+
+            var reg = new RegExp('([0-9]+.[0-9]{' + digits +'})[0-9]*');
+            var stringNumber = formatNumber.replace(reg, "$1");
+            var decimalPosition = stringNumber.indexOf('.');
+            if (decimalPosition < 0) {
+                decimalPosition = stringNumber.length;
+                stringNumber += '.';
+            }
+            while (stringNumber.length <= decimalPosition + digits) {
+                stringNumber += '0';
+            }
+            return stringNumber;
+        }
+
+        //var a = 0.1,
+
+        //b = 0.2,
+        //c = a + b ;
+        //console.log(fixNumberDecimalDigits(str_salary, 1))
+  end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
+         var each_tr=CC_Tab.getElementsByTagName("tr");
+         var each_total=[];
+         for(var i=1;i<each_tr.length-3;i++){
+            var each_td=each_tr[i].getElementsByTagName("td");
+            let num_total=new Number();
+            for(var j=1;j<each_td.length;j++){
+                num_total+=parseFloat(each_td[j].innerHTML)
+            }
+           each_total.push(num_total)
+         }
+        var last_tr='';
+        for(var i=0;i<1;i++){
+             last_tr+="<tbody class='last_tr'><tr><td>天总数</td></tr>"
+              for(var j=0;j<each_total.length;j++){
+                last_tr+="<tr class='each_total'><td>"+each_total[j]+"</td></tr>"
+              }
+             last_tr+='</tbody>'
+            CC_Tab.innerHTML+=last_tr
+        }
+    }
+    }
+  
+</script>
+</html>
