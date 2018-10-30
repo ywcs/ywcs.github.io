@@ -11,14 +11,14 @@
      table{
         border-collapse:collapse;border-spacing:0;
         width:1000px;  
-        border:1px solid #ccc;
+       
         position:relative;
         padding:6px;
         overflow: hidden;
 
      }
       td,th{
-          border:1px solid #ccc;
+          border:1px dashed #cacaca;
           text-align: center;
           padding:4px;
           
@@ -29,8 +29,9 @@
           
       }
       .last_tr{
-          position:absolute;
-          left: 940px;
+        width: 57px;
+        position: absolute;
+        left: 945px;
           top:0px;
           background:#f0ad4e;
           color:white;
@@ -59,12 +60,13 @@
           width:979px;
          
           
-          border:1px dashed green;
+          
       }
       #head h3{
           font-size:20;
           text-align:center;
-          border-bottom:1px solid red;
+          border-bottom:2px dashed #cacaca;
+         
       }
       #head div{
           float:left;
@@ -84,7 +86,7 @@
 <body>
     <header id="head" class='clearfix'>
        <h3>10月产量表</h3>
-       <div class='tabs_cc tabs_wdx j_q'>王东旭</div>
+       <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
        <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
        <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
     </header>
@@ -100,61 +102,37 @@
     //CC_DATAS1  wdx
     var CC_DATAS0={
         //554
-         "1号":[1,1,1,1,1,
-                1,2,3,4,5,
-                1,2,3,4
+         "30号":[0,0,100,0,60,
+                360,0,180,400,340,
+                100,160,0,0
                ],
-         "2号":[1,1,1,1,1,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "3号":[1,1,1,1,1,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "4号":[1,1,1,1,1,
-                1,2,3,4,5,
-                1,2,3,4
+         "31号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
                ],
     }
     //CC_DATAS1  ywc
     var CC_DATAS1={
         //554
-         "1号":[1,2,3,4,5,
-                1,2,3,4,5,
-                1,2,3,4
+        "30号":[365,0,100,0,20,
+                404,0,140,0,340,
+                0,60,0,0
                ],
-         "2号":[1,2,3,250,260,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "3号":[220,230,240,250,260,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "4号":[1,3,240,4,261,
-                1,2,3,4,5,
-                1,2,3,4
+         "31号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
                ],
     }
         //CC_DATAS2 ly
         var CC_DATAS2={
         //554
-         "1号":[2,2,3,4,5,
-                1,2,0,4,5,
-                1,2,3,4
+        "30号":[300,0,100,0,0,
+                320,0,190,0,280,
+                80,320,0,0
                ],
-         "2号":[1,2,3,0,0,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "3号":[1,1,1,1,1,
-                1,2,3,4,5,
-                1,2,3,4
-               ],
-         "4号":[1,3,1,4,1,
-                1,2,3,4,5,
-                1,2,3,4
+         "31号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
                ],
     }
     var CC_DATA={
@@ -310,7 +288,7 @@
                 str_z+="<th>"+arrTotal[i]+"</th>";
                 str_num+=arrTotal[i];
               }
-         CC_Tab.innerHTML+="<tr class='z_c'><th>总数</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
+         CC_Tab.innerHTML+="<tr class='z_c'><th>单总</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
          var all_total=document.getElementById('all_total');
          
          all_total.innerHTML=parseFloat(str_num);
@@ -319,7 +297,7 @@
               for(var i=0;i<arrjq.length;i++){
                 str_jq+="<th>"+arrjq[i]+"</th>"
               }
-         CC_Tab.innerHTML+="<tr class='j_q'><th>价钱</th>"+str_jq+"</tr>"
+         CC_Tab.innerHTML+="<tr class='j_q'><th>工价</th>"+str_jq+"</tr>"
          var priceTotal=new Array();
          for(var u=0;u<arrTotal.length;u++){
             priceTotal.push((arrTotal[u]*parseInt(arrjq[u]))/100);
@@ -370,7 +348,7 @@
          }
         var last_tr='';
         for(var i=0;i<1;i++){
-             last_tr+="<tbody class='last_tr'><tr><td>天总数</td></tr>"
+             last_tr+="<tbody class='last_tr'><tr><td>总数</td></tr>"
               for(var j=0;j<each_total.length;j++){
                 last_tr+="<tr class='each_total'><td>"+each_total[j]+"</td></tr>"
               }
