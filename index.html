@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>串串产量表</title>
     <style>
-        /* 16:26 2018/10/29  23:26*/
-      *{margin:0;padding:0}
+         /* 16:26 2018/10/29  23:26*/
+         *{margin:0;padding:0}
      table{
         border-collapse:collapse;border-spacing:0;
         width:1000px;  
-       
+        border:1px solid #ccc;
         position:relative;
         padding:6px;
         overflow: hidden;
 
      }
       td,th{
-          border:1px dashed #cacaca;
+          border:1px solid #ccc;
           text-align: center;
           padding:4px;
           
@@ -29,9 +29,8 @@
           
       }
       .last_tr{
-        width: 57px;
-        position: absolute;
-        left: 945px;
+          position:absolute;
+          left: 940px;
           top:0px;
           background:#f0ad4e;
           color:white;
@@ -60,15 +59,14 @@
           width:979px;
          
           
-          
+          border:1px dashed green;
       }
       #head h3{
           font-size:20;
           text-align:center;
-          border-bottom:2px dashed #cacaca;
-         
+          border-bottom:1px solid red;
       }
-      #head .lst_h{
+      #head div{
           float:left;
           margin:4px;
           padding:6px;
@@ -81,30 +79,34 @@
           background:#f3181d;
           color:white;
       }
-      a{
-          text-decoration: none;
+      #head div.form_data{
+          width:60px;
+          position:absolute;
+          top: 28px;
+          left: 188px;
       }
-      .form_data{
-          margin-left:30px;
-      }
-      .form_data a{
-        padding:6px;
+        .form_data a{
+          padding:6px;
           border-radius: 4px;
           cursor: pointer;
+          text-decoration: none;
+      } 
+      .active{
+          background:red;
+          color:white;
       }
     </style>
 </head>
 <body>
     <header id="head" class='clearfix'>
-       <h3>10月产量表</h3>
-       <div class='tabs_cc tabs_wdx j_q active lst_h'>王东旭</div>
-       <div class='tabs_cc tabs_ywc j_q lst_h'>杨文常</div>
-       <div class='tabs_cc tabs_ly  j_q lst_h'>雷  燕</div>
-       <div class='form_data lst_h'>
+        <h3>10月产量表</h3>
+        <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
+        <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
+        <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
+        <div class='form_data '>
             <a href="data.html" class='j_q '>数据单</a>
         </div>
-    </header>
-    
+     </header>
     <table id="CC_Tab">
  
     </table>
@@ -122,8 +124,8 @@
                 100,160,0,0
                ],
          "31号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
+                0,0,100,0,0,
+                0,1020,240,0,
                ],
     }
     //CC_DATAS1  ywc
@@ -133,9 +135,9 @@
                 404,0,140,0,340,
                 0,60,0,0
                ],
-         "31号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
+         "31号":[0,200,0,0,0,
+                400,780,100,0,0,
+                0,0,230,0,
                ],
     }
         //CC_DATAS2 ly
@@ -146,8 +148,8 @@
                 80,320,0,0
                ],
          "31号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
+                985,0,180,0,0,
+                0,0,140,0,
                ],
     }
     var CC_DATA={
@@ -164,6 +166,7 @@
     arr.push(CC_DATAS2);
     var CC=document.getElementById('head');
     var allCC=CC.getElementsByTagName('div');
+    
     var CC_Tab=document.getElementById('CC_Tab');
     var each_total=document.getElementById('each_total');
   
@@ -188,10 +191,13 @@
     for(var i=0;i<allCC.length;i++){
        allCC[i].index=i;
        allCC[i].onclick=function(){
-        for(var k=0;k<allCC.length;k++){
+       
+        for(var k=0;k<allCC.length-1;k++){
             allCC[k].className='j_q';
+             
         }
         this.className='active';
+         
         CC_Tab.innerHTML="";
         var str="";
         for(var i in CC_DATA.name){
