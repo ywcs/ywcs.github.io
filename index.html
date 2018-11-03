@@ -15,7 +15,6 @@
         position:relative;
         padding:6px;
         overflow: hidden;
-
      }
       td,th{
           border:1px dashed #ccc;
@@ -135,8 +134,31 @@
                 0,0,0,0,0,
                 0,0,0,0,
                ],
+	     "5号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "6号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "7号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "8号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "9号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "10号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
     }
-
     //CC_DATAS1  ywc
     var CC_DATAS1={
         //554
@@ -153,6 +175,30 @@
                 0,140,560,0,
                ],
 	     "4号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "5号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "6号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "7号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "8号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "9号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "10号":[0,0,0,0,0,
                 0,0,0,0,0,
                 0,0,0,0,
                ],
@@ -176,6 +222,31 @@
                 0,0,0,0,0,
                 0,0,0,0,
                ],
+	     "5号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "6号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "7号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "8号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "9号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	     "10号":[0,0,0,0,0,
+                0,0,0,0,0,
+                0,0,0,0,
+               ],
+	    
     }
     var CC_DATA={
          //554
@@ -201,7 +272,6 @@
          str+="<th>"+CC_DATA.name[i]+"</th>"
     }
     CC_Tab.innerHTML="<tr>"+str+"</tr>";
-
     var ts=""
     for(var j in CC_DATAS0){
          ts+="<tr><td>"+j+"</td>"
@@ -243,6 +313,7 @@
        }
    }
    function fn(){
+        Highlight ()
         var td2=CC_Tab.getElementsByClassName('list0');
         var td3=CC_Tab.getElementsByClassName('list1');
         var td4=CC_Tab.getElementsByClassName('list2');
@@ -345,25 +416,55 @@
                 str_jq+="<th>"+arrjq[i]+"</th>"
               }
          CC_Tab.innerHTML+="<tr class='j_q'><th>工价</th>"+str_jq+"</tr>"
+         //console.log(arrTotal)
          var priceTotal=new Array();
          for(var u=0;u<arrTotal.length;u++){
             priceTotal.push((arrTotal[u]*parseInt(arrjq[u]))/100);
          }
+         //console.log(priceTotal)
+         //总工资一栏
          var str_price_total='';
          var str_salary=new Number();
               for(var i=0;i<priceTotal.length;i++){
                 str_price_total+="<th>"+priceTotal[i]+"</th>";
                 str_salary+=priceTotal[i];
               }
+              //console.log(str_price_total)
          CC_Tab.innerHTML+="<tr class='y_d'><th>工资</th>"+str_price_total+"<td id='end_salary' class='end_salary all_total'>3000</td></tr>"
          var end_salary=document.getElementById('end_salary');
-         function fixNumberDecimalDigits(number, digits) {
+
+      end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
+         var each_tr=CC_Tab.getElementsByTagName("tr");
+         var each_total=[];
+         for(var i=1;i<each_tr.length-3;i++){
+            var each_td=each_tr[i].getElementsByTagName("td");
+            let num_total=new Number();
+            for(var j=1;j<each_td.length;j++){
+                num_total+=parseFloat(each_td[j].innerHTML)
+            }
+            //每天的总数
+           each_total.push(num_total)
+           
+         }
+         //一共的总数
+        var last_tr='';
+        for(var i=0;i<1;i++){
+             last_tr+="<tbody class='last_tr'><tr><td>总数</td></tr>"
+              for(var j=0;j<each_total.length;j++){
+                last_tr+="<tr class='each_total'><td>"+each_total[j]+"</td></tr>"
+              }
+             last_tr+='</tbody>'
+            CC_Tab.innerHTML+=last_tr
+        }
+    }
+
+    }//window.onload   
+          //函数封装 0.1+0.2=0.3333的问题
+          function fixNumberDecimalDigits(number, digits) {
             var formatNumber = parseFloat(number);
             if (isNaN(formatNumber)) return false;
-
             var digits = digits || 2;
             formatNumber = formatNumber.toString();
-
             var reg = new RegExp('([0-9]+.[0-9]{' + digits +'})[0-9]*');
             var stringNumber = formatNumber.replace(reg, "$1");
             var decimalPosition = stringNumber.indexOf('.');
@@ -376,45 +477,22 @@
             }
             return stringNumber;
         }
-
         //var a = 0.1,
-
         //b = 0.2,
         //c = a + b ;
         //console.log(fixNumberDecimalDigits(str_salary, 1))
-  end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
-         var each_tr=CC_Tab.getElementsByTagName("tr");
-         var each_total=[];
-         for(var i=1;i<each_tr.length-3;i++){
-            var each_td=each_tr[i].getElementsByTagName("td");
-            let num_total=new Number();
-            for(var j=1;j<each_td.length;j++){
-                num_total+=parseFloat(each_td[j].innerHTML)
+         //当天颜色高亮 #f0ad4e
+        function Highlight (){ 
+            var d = new Date().getDate();
+            var nowTd=document.querySelectorAll('td');
+                console.log(nowTd.length)
+                for(var i=0;i<nowTd.length;i++){
+                    if(nowTd[i].innerHTML==d+'号'){
+                    nowTd[i].parentNode.style.background='red';
+                    nowTd[i].parentNode.style.color='white';
+                        
+                }
             }
-           each_total.push(num_total)
-         }
-        var last_tr='';
-        for(var i=0;i<1;i++){
-             last_tr+="<tbody class='last_tr'><tr><td>总数</td></tr>"
-              for(var j=0;j<each_total.length;j++){
-                last_tr+="<tr class='each_total'><td>"+each_total[j]+"</td></tr>"
-              }
-             last_tr+='</tbody>'
-            CC_Tab.innerHTML+=last_tr
         }
-    }
-    //当天颜色高亮
-   // var d = new Date().getDate();
-   // var nowTd=document.querySelectorAll('td');
-    //console.log(nowTd.length)
-    //for(var i=0;i<nowTd.length;i++){
-        //if(nowTd[i].innerHTML==d+'号'){
-           // nowTd[i].parentNode.style.background='#3ed39c';
-           // nowTd[i].parentNode.style.color='red';
-            
-       // }
-   // }
-    }
-  
 </script>
 </html>
