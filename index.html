@@ -15,6 +15,7 @@
         position:relative;
         padding:6px;
         overflow: hidden;
+        margin-left: 18px;
      }
       td,th{
           border:1px dashed #ccc;
@@ -56,7 +57,7 @@
       }
       #head{
           width:979px;
-         
+          margin-left:18px;
           
            
       }
@@ -81,8 +82,10 @@
       #head div.form_data{
           width:60px;
           position:absolute;
-          top: 25px;
-          left: 188px;
+          /* top: 25px;
+          left: 188px; */
+          top: 27px;
+          left: 204px;
       }
         .form_data a{
           padding:6px;
@@ -94,11 +97,23 @@
           background:red;
           color:white;
       }
+      .everyday{
+        width: 69px;
+    border: 1px solid red;
+    position: absolute;
+    top: 69px;
+    right: 280px;
+      }
+      .everyday p{
+          text-align: center;
+          height:29px;
+          border-bottom:1px dotted #ccc;
+      }
     </style>
 </head>
 <body>
     <header id="head" class='clearfix'>
-        <h3>11月产量表</h3>
+        <h3>11月串串产量表</h3>
         <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
         <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
         <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
@@ -112,6 +127,10 @@
     <!-- <div id="each_total">
         <div class='niu_du'></div>
     </div> -->
+    <div class="everyday" id="everyday">
+        <p class='day day'>每天工资</p>
+        
+    </div>
 </body>
 <script>
     var arr=[];
@@ -138,10 +157,10 @@
                 0,0,0,0,0,
                 0,0,0,0,
                ],
-	     "6号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
+	       "6号":[0,0,0,0,0,
+                  0,0,0,0,0,
+                  0,0,0,0,
+                 ],
 	     "7号":[0,0,0,0,0,
                 0,0,0,0,0,
                 0,0,0,0,
@@ -165,11 +184,12 @@
          "1号":[0,0,0,0,0,
                 0,0,0,0,0,
                 0,0,0,0
-               ],
+                ],
          "2号":[0,0,0,0,20,
                 649,580,0,0,920,
                 0,224,0,0,
                ],
+        
 		 "3号":[0,0,0,0,80,
                 560,380,0,0,620,
                 0,140,560,0,
@@ -281,14 +301,28 @@
           "</tr>"
     }
     CC_Tab.innerHTML+=ts
+    
     window.onload=function(){
         fn()
+    //     ftime()
+    //     var nowTds=''
+    //     var dd = ''
+    //   function ftime(){
+    //     dd = new Date().getDate();
+    //     nowTds=document.querySelectorAll('p');
+    //      //console.log(nowTds);
+    //      //console.log(nowTds[dd].innerHTML)
+    //      nowTds[dd].style.background='red'
+    //   }
     for(var i=0;i<allCC.length;i++){
        allCC[i].index=i;
        allCC[i].onclick=function(){
        
+        //console.log(nowTds[2].innerHTML)
+        
         for(var k=0;k<allCC.length-1;k++){
             allCC[k].className='j_q';
+            
              
         }
         this.className='active';
@@ -310,10 +344,13 @@
     }
     CC_Tab.innerHTML+=ts
     fn()
+   
        }
    }
    function fn(){
         Highlight ()
+       
+       // fx()
         var td2=CC_Tab.getElementsByClassName('list0');
         var td3=CC_Tab.getElementsByClassName('list1');
         var td4=CC_Tab.getElementsByClassName('list2');
@@ -343,49 +380,164 @@
          var muer_total=new Number();
          var tudou_total=new Number();
          var xilanhua_total=new Number();
+         var dantian=new Array();
+         var dantianjson={
+              "td2":[],
+              "td3":[],
+              "td4":[],
+              "td5":[],
+              "td6":[],
+              "td7":[],
+              "td8":[],
+              "td9":[],
+              "td10":[],
+              "td11":[],
+              "td12":[],
+              "td13":[],
+              "td14":[],
+              "td15":[],
+              };
+
         for(var i=0;i<td2.length;i++){
+            dantianjson['td2'].push(td2[i].innerHTML)
+
             niudu_total+=parseFloat(td2[i].innerHTML);
         }
+        
+        //console.log(dantian)
+        
         for(var i=0;i<td3.length;i++){
+            dantianjson['td3'].push(td3[i].innerHTML)
+
              xia_total+=parseFloat(td3[i].innerHTML);
         }
         for(var i=0;i<td4.length;i++){
+            dantianjson['td4'].push(td4[i].innerHTML)
+
              haidai_total+=parseFloat(td4[i].innerHTML);
         }
         for(var i=0;i<td5.length;i++){
+            dantianjson['td5'].push(td5[i].innerHTML)
+
             doufu_total+=parseFloat(td5[i].innerHTML);
         }
         for(var i=0;i<td6.length;i++){
+            dantianjson['td6'].push(td6[i].innerHTML)
+
             erjun_total+=parseFloat(td6[i].innerHTML);
         }
         for(var i=0;i<td7.length;i++){
+            dantianjson['td7'].push(td7[i].innerHTML)
+
             yajun_total+=parseFloat(td7[i].innerHTML);
         }
         for(var i=0;i<td8.length;i++){
+            dantianjson['td8'].push(td8[i].innerHTML)
+
             heimaodu_total+=parseFloat(td8[i].innerHTML);
         }
         for(var i=0;i<td9.length;i++){
+            dantianjson['td9'].push(td9[i].innerHTML)
+
              fengzhua_total+=parseFloat(td9[i].innerHTML);
         }
         for(var i=0;i<td10.length;i++){
+            dantianjson['td10'].push(td10[i].innerHTML)
+
             doupi_total+=parseFloat(td10[i].innerHTML);
         }
         for(var i=0;i<td11.length;i++){
+            dantianjson['td11'].push(td11[i].innerHTML)
+
             ou_total+=parseFloat(td11[i].innerHTML);
         }
         
         for(var i=0;i<td12.length;i++){
+            dantianjson['td12'].push(td12[i].innerHTML)
+
              sunzi_total+=parseFloat(td12[i].innerHTML);
         }
         for(var i=0;i<td13.length;i++){
+            dantianjson['td13'].push(td13[i].innerHTML)
+
              muer_total+=parseFloat(td13[i].innerHTML);
         }
         for(var i=0;i<td14.length;i++){
+            dantianjson['td14'].push(td14[i].innerHTML)
+
+            
             tudou_total+=parseFloat(td14[i].innerHTML);
         }
         for(var i=0;i<td15.length;i++){
+            dantianjson['td15'].push(td15[i].innerHTML)
+
+           
             xilanhua_total+=parseFloat(td15[i].innerHTML);
         }
+
+          //------------
+         
+          function newarrs(d){
+              
+          var sday=new Array();
+          //console.log(dantianjson)
+          for(var i in dantianjson){//td2 td3....
+            sday.push(dantianjson[i][d])
+             //console.log(dantianjson[i][1])
+             
+          }
+          //每一天的每个产品数：
+          // console.log(arrday1)
+          return sday;
+        }
+          
+          function ds(arreveryday){
+            var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+            var daytotalst=new Number();
+          
+            //console.log(arrday1)
+         var priceTotals=new Array();
+         for(var u=0;u<arreveryday.length;u++){
+            priceTotals.push((arreveryday[u]*parseInt(arrjq[u]))/100);
+         }
+         for(var i=0;i<priceTotals.length;i++){
+            daytotalst+=parseFloat(priceTotals[i])
+         }
+         //console.log( priceTotals)
+         //console.log( daytotalst) //每天总工资
+         return daytotalst;
+          }
+          fx()
+          function fx(){
+            var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+            
+            var j=new Number();
+            everyday.innerHTML="<p class='day day'>每天工资</p>";
+            var len=CC_DATAS0;
+            var lens=[]
+            for(var i in len){
+                
+                 lens.push(i)
+            }
+           // console.log(lens)
+          for(var i=0;i<lens.length;i++){
+           
+            j=newarrs(parseInt(i))
+            //console.log(j)
+              //console.log(parseInt(i))
+              //console.log(ds(j))
+             
+              everyday.innerHTML+="<p class='day day"+parseInt(i)+"'>"+fixNumberDecimalDigits(ds(j))+"</p>"
+          }
+         
+         }
+           //Math.round(ds(j))
+           //var j=newarrs(0)//第一天
+            //console.log(ds(j)) ///单天总工资
+          //<p class='day day1'>84.7</p>
+
+
+          //--------------------------
          arrTotal.push(niudu_total)
          arrTotal.push(xia_total)
          arrTotal.push(haidai_total)
@@ -400,12 +552,14 @@
          arrTotal.push(muer_total)
          arrTotal.push(tudou_total)
          arrTotal.push(xilanhua_total)
+        
          var str_z='';
          var str_num=new Number;
               for(var i=0;i<arrTotal.length;i++){
                 str_z+="<th>"+arrTotal[i]+"</th>";
                 str_num+=arrTotal[i];
               }
+            
          CC_Tab.innerHTML+="<tr class='z_c'><th>单总</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
          var all_total=document.getElementById('all_total');
          
@@ -476,6 +630,8 @@
                 stringNumber += '0';
             }
             return stringNumber;
+
+         
         }
         //var a = 0.1,
         //b = 0.2,
@@ -485,7 +641,9 @@
         function Highlight (){ 
             var d = new Date().getDate();
             var nowTd=document.querySelectorAll('td');
-                console.log(nowTd.length)
+            var nowTds=document.querySelectorAll('p');
+            
+                //console.log(nowTd.length)
                 for(var i=0;i<nowTd.length;i++){
                     if(nowTd[i].innerHTML==d+'号'){
                     nowTd[i].parentNode.style.background='red';
