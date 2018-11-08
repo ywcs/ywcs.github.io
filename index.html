@@ -7,18 +7,57 @@
     <title>11月串串产量表</title>
     <style>
               /* 16:26 2018/10/29  23:26*/
-         *{margin:0;padding:0}
+              @charset "utf-8";
+html{color:#000; background:#FFF;}
+/*body, button, input, select, textarea {  for ie
+    font: 12px/18px Arial, Verdana, Microsoft YaHei;
+}
+h1 {font-size: 18px;}
+h2 {font-size: 16px;}
+h3 {font-size: 14px;}
+h4, h5, h6 {font-size: 100%;}
+*/
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,
+th,td,select,option,fieldset,blockquote,figure{margin:0;padding:0}
+em,i{font-style:normal}
+li{list-style:none;vertical-align:top}
+a{text-decoration:none;color: black;border:0}
+a:hover{text-decoration:underline;}
+img{border:0;}/*vertical-align:top;*/
+table{border-collapse:collapse;border-spacing:0;}
+textarea{resize:none;overflow:auto;outline:none;}
+input{outline:none;}
+/*-----清浮动-------------*/
+.clearfix{zoom:1}
+.clearfix:after{content:'';display:table;clear:both}
+/*------左浮动 右浮动------------*/
+.fl{float:left}
+.fr{float:right}
+.cl{clear:left}
+.cr{clear:right}
+/*------- 子元素有margin-top ----------*/
+.cleartm:before{content:'';display:table;}
+
+q:before,q:after{content: '';content: none;}
+sub{
+    vertical-align: text-bottom;
+}
+/* =============== */
+body{
+     /* background:#dddcdc */
+     
+}
      table{
         border-collapse:collapse;border-spacing:0;
         width:1000px;  
-        
+       
         position:relative;
         padding:6px;
-        overflow: hidden;
+        /* overflow: hidden; */
         margin-left: 18px;
      }
       td,th{
-          border:1px dashed #ccc;
+          border:1px dashed #c7bebe;
           text-align: center;
           padding:4px;
           
@@ -30,8 +69,8 @@
       }
       .last_tr{
           position:absolute;
-          left: 926px;
-          top:0px;
+          left: 996px;
+          top:1px;
           background:#f0ad4e;
           color:white;
       }
@@ -55,6 +94,10 @@
           background:#337ab7;
           color:white;
       }
+      .j_g{
+          background:#ec971f;
+          color:white;
+      }
       #head{
           width:979px;
           margin-left:18px;
@@ -62,9 +105,11 @@
            
       }
       #head h3{
+          padding:4px;
           font-size:20;
-          text-indent:100px;
-          border-bottom:2px dashed #ccc;
+         text-indent:60px;
+          border-bottom:1px dashed #ccc;
+          color:red;
       }
       #head div{
           float:left;
@@ -80,12 +125,12 @@
           color:white;
       }
       #head div.form_data{
-          width:60px;
+          /* width:60px;
           position:absolute;
-          /* top: 25px;
-          left: 188px; */
+          top: 25px;
+          left: 188px; 
           top: 23px;
-          left: 204px;
+          left: 204px;*/
       }
         .form_data a{
           padding:6px;
@@ -97,18 +142,30 @@
           background:red;
           color:white;
       }
-      .everyday{
+      /* .everyday{
         width: 69px;
-    border: 1px solid red;
-    position: absolute;
-    top: 62px;
-    left: 1004px;
-      }
+        border: 1px solid red;
+        position: absolute;
+        top: 62px;
+        left: 1004px;
+      } */
       .everyday p{
           text-align: center;
           height:27px;
           border-bottom:1px solid #ccc;
 	      line-height: 29px;
+      }
+      .every_sum{
+          position:absolute;
+          left: 924px;
+          top:1px;
+          background:#56c272;
+          color:white;
+         
+      }
+      .every_sum td{
+        border-left:none;
+          border-right:none;
       }
     </style>
 </head>
@@ -118,9 +175,9 @@
         <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
         <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
         <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
-        <div class='form_data '>
-            <a href="data.html" class='j_q '>数据单</a>
+        <div class='form_data '><a href="data.html" class='j_q '>数据单</a>
         </div>
+        <div id='times' class='j_g'></div>
      </header>
     <table id="CC_Tab">
  
@@ -178,6 +235,10 @@
                 0,0,0,0,0,
                 0,0,0,0,
                ],
+	       //"11号":[0,0,0,0,0,
+            //      0,0,0,0,0,
+           //       0,0,0,0,
+            //    ],
     }
     //CC_DATAS1  ywc
     var CC_DATAS1={
@@ -304,6 +365,7 @@
     CC_Tab.innerHTML+=ts
     
     window.onload=function(){
+        obj.init()
         fn()
     //     ftime()
     //     var nowTds=''
@@ -514,13 +576,16 @@
             
             var j=new Number();
             everyday.innerHTML="<p class='day day'>每天工资</p>";
+           
             var len=CC_DATAS0;
             var lens=[]
             for(var i in len){
                 
                  lens.push(i)
             }
-           // console.log(lens)
+             
+           var strts="";
+           strts+="<tbody class='every_sum'><tr><td>每天工资</td></tr>"
           for(var i=0;i<lens.length;i++){
            
             j=newarrs(parseInt(i))
@@ -528,9 +593,11 @@
               //console.log(parseInt(i))
               //console.log(ds(j))
              
-              everyday.innerHTML+="<p class='day day"+parseInt(i)+"'>"+fixNumberDecimalDigits(ds(j))+"</p>"
+              //everyday.innerHTML+="<p class='day day"+parseInt(i)+"'>"+fixNumberDecimalDigits(ds(j))+"</p>"
+              strts+="<tr class='day '><td class='today"+parseInt(i+1)+"'>"+fixNumberDecimalDigits(ds(j))+"</td></tr>"
           }
-         
+          strts+='</tbody>'
+          CC_Tab.innerHTML+=strts;
          }
            //Math.round(ds(j))
            //var j=newarrs(0)//第一天
@@ -590,8 +657,16 @@
 
       end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
          var each_tr=CC_Tab.getElementsByTagName("tr");
-         var each_total=[];
-         for(var i=1;i<each_tr.length-3;i++){
+         var each_total=[]; //ha
+         var len=CC_DATAS0;
+            var lens=[]
+            for(var i in len){
+                
+                 lens.push(i)
+            }
+            //console.log(lens.length)
+         //for(var i=1;i<each_tr.length-13;i++){
+             for(var i=1;i<lens.length+1;i++){
             var each_td=each_tr[i].getElementsByTagName("td");
             let num_total=new Number();
             for(var j=1;j<each_td.length;j++){
@@ -599,20 +674,34 @@
             }
             //每天的总数
            each_total.push(num_total)
-           
+           //console.log(each_total.length)
          }
          //一共的总数
         var last_tr='';
         for(var i=0;i<1;i++){
              last_tr+="<tbody class='last_tr'><tr><td>总数</td></tr>"
               for(var j=0;j<each_total.length;j++){
-                last_tr+="<tr class='each_total'><td>"+each_total[j]+"</td></tr>"
+                last_tr+="<tr class='each_total'><td class='today"+parseInt(j+1)+"'>"+each_total[j]+"</td></tr>"
               }
              last_tr+='</tbody>'
             CC_Tab.innerHTML+=last_tr
         }
+        var everySum=document.querySelector('.every_sum');
+    var lastTr=document.querySelector('.last_tr');
+    var everySumTd=document.querySelectorAll('td');
+    var lastTrTd=document.querySelectorAll('td');
+    var d = new Date().getDate();
+    for(var i=0;i<everySumTd.length;i++){
+        if(everySumTd[i].className=='today'+d){      
+            everySumTd[i].parentNode.style.background='red';
+            everySumTd[i].parentNode.style.color='white';
+         }
+          
     }
-
+    }
+   
+    
+     
     }//window.onload   
           //函数封装 0.1+0.2=0.3333的问题
           function fixNumberDecimalDigits(number, digits) {
@@ -644,14 +733,71 @@
             var nowTd=document.querySelectorAll('td');
             var nowTds=document.querySelectorAll('p');
             
+
+             //console.log(everySum)
                 //console.log(nowTd.length)
                 for(var i=0;i<nowTd.length;i++){
                     if(nowTd[i].innerHTML==d+'号'){
                     nowTd[i].parentNode.style.background='red';
                     nowTd[i].parentNode.style.color='white';
                         
-                }
+                   }
+                   //console.log(nowTd[i].className)
+                  
             }
         }
+        //倒计时：
+        var obj={
+         times:'Feb 5,2019 0:0:0',
+         oInput:',',
+         timer:null,
+         newDate:null,
+         olddate:null,
+         chaDate:null,
+         intervel:1000,
+         str:'',
+         init:function(){
+              //this.oInput=document.getElementsByTagName('input');
+              this.timer=setInterval(this.fnMove.bind(this),500);
+         },fnMove:function(){
+            //this.oInput[1].value='';
+            this.newDate=new Date(this.times);
+            //this.newDate=new Date(this.oInput[0].value);
+            this.olddate=new Date();
+            this.chaDate=Math.floor((this.newDate-this.olddate)/1000);
+            var d=Math.floor(this.chaDate/86400);
+            var h=Math.floor(this.chaDate%86400/3600);
+            var m=Math.floor(this.chaDate%86400%3600/60);
+            var s=Math.floor(this.chaDate%60);
+            this.str="距离过年还有："+this.toFn(d)+'天'+this.toFn(h)+'时'+this.toFn(m)+'分'+this.toFn(s)+'秒';
+            //this.oInput[1].value+=this.str;
+            //console.log(this.str)
+            times.innerHTML=this.str;
+        },
+        toFn:function(n){
+              return n<10?'0'+n:''+n;
+        }
+    };
+ 
+ //setInterval(function(){
+     
+  //},1000)
+/*
+一月 Jan. January
+二月 Feb. February
+三月 Mar. March
+四月 Apr. April
+五月 May. May
+六月 June. June
+七月 July. July
+八月 Aug. Aguest
+九月 Sept. September
+十月 Oct. October
+十一月 Nov. November
+十二月 Dec. December
+*/
+
+
+ 
 </script>
 </html>
