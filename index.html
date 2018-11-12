@@ -6,821 +6,823 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>11月串串产量表</title>
     <style>
-              /* 16:26 2018/10/29  23:26*/
-              @charset "utf-8";
-html{color:#000; background:#FFF;}
-/*body, button, input, select, textarea {  for ie
-    font: 12px/18px Arial, Verdana, Microsoft YaHei;
-}
-h1 {font-size: 18px;}
-h2 {font-size: 16px;}
-h3 {font-size: 14px;}
-h4, h5, h6 {font-size: 100%;}
-*/
-body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,
-th,td,select,option,fieldset,blockquote,figure{margin:0;padding:0}
-em,i{font-style:normal}
-li{list-style:none;vertical-align:top}
-a{text-decoration:none;color: black;border:0}
-a:hover{text-decoration:underline;}
-img{border:0;}/*vertical-align:top;*/
-table{border-collapse:collapse;border-spacing:0;}
-textarea{resize:none;overflow:auto;outline:none;}
-input{outline:none;}
-/*-----清浮动-------------*/
-.clearfix{zoom:1}
-.clearfix:after{content:'';display:table;clear:both}
-/*------左浮动 右浮动------------*/
-.fl{float:left}
-.fr{float:right}
-.cl{clear:left}
-.cr{clear:right}
-/*------- 子元素有margin-top ----------*/
-.cleartm:before{content:'';display:table;}
+        /* 16:26 2018/10/29  23:26*/
+        @charset "utf-8";
+        html{color:#000; background:#FFF;}
+        /*body, button, input, select, textarea {  for ie
+            font: 12px/18px Arial, Verdana, Microsoft YaHei;
+        }
+        h1 {font-size: 18px;}
+        h2 {font-size: 16px;}
+        h3 {font-size: 14px;}
+        h4, h5, h6 {font-size: 100%;}
+        */
+        body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,
+        th,td,select,option,fieldset,blockquote,figure{margin:0;padding:0}
+        em,i{font-style:normal}
+        li{list-style:none;vertical-align:top}
+        a{text-decoration:none;color: black;border:0}
+        a:hover{text-decoration:underline;}
+        img{border:0;}/*vertical-align:top;*/
+        table{border-collapse:collapse;border-spacing:0;}
+        textarea{resize:none;overflow:auto;outline:none;}
+        input{outline:none;}
+        /*-----清浮动-------------*/
+        .clearfix{zoom:1}
+        .clearfix:after{content:'';display:table;clear:both}
+        /*------左浮动 右浮动------------*/
+        .fl{float:left}
+        .fr{float:right}
+        .cl{clear:left}
+        .cr{clear:right}
+        /*------- 子元素有margin-top ----------*/
+        .cleartm:before{content:'';display:table;}
 
-q:before,q:after{content: '';content: none;}
-sub{
-    vertical-align: text-bottom;
-}
-/* =============== */
-body{
-     /* background:#dddcdc */
-     
-}
-     table{
-        border-collapse:collapse;border-spacing:0;
-        width:1000px;  
-       
-        position:relative;
-        padding:6px;
-        /* overflow: hidden; */
-        margin-left: 18px;
-     }
-      td,th{
-          border:1px dashed #c7bebe;
-          text-align: center;
-          padding:4px;
-          
-      }
-      #each_total{
-          border:1px solid red;
-          width:500px;
-          
-      }
-      .last_tr{
-          position:absolute;
-          left: 996px;
-          top:0px;
-          background:#5bc0de;
-          color:white;
-          width: 90px;
-      }
-      .erery_totals{
-        background:#5cb85c;
-        color:white;
-      }
-      .all_total{
-          background:#f10215;
-          color:white;
-      }
-      .z_c{
-          background:#5bc0de;
-          color:white;
-      }
-      .j_q{
-          background:#5cb85c;
-          color:white;
-      }
-      .j_s{
-        background:#ec971f;
-          color:white;
-      }
-      .y_d{
-          background:#56c272;
-          color:white;
-      }
-      .j_g{
-          background:#ec971f;
-          color:white;
-      }
-      #head{
-          width:979px;
-          margin-left:18px;
-          
-           
-      }
-      #head h3{
-          padding:4px;
-          font-size:20;
-         text-indent:60px;
-          border-bottom:1px dashed #ccc;
-          color:red;
-      }
-      #head div{
-          float:left;
-          margin:4px;
-          padding:6px;
-          border-radius: 4px;
-          cursor: pointer;
-      }
-      .clearfix{zoom:1}
-      .clearfix:after{content:'';display:table;clear:both}
-      .active{
-          background:#f3181d;
-          color:white;
-      }
-      #head div.form_data{
-          /* width:60px;
-          position:absolute;
-          top: 25px;
-          left: 188px; 
-          top: 23px;
-          left: 204px;*/
-      }
+        q:before,q:after{content: '';content: none;}
+        sub{
+            vertical-align: text-bottom;
+        }
+        /* =============== */
+        body{
+            /* background:#dddcdc */
+
+        }
+        table{
+            border-collapse:collapse;border-spacing:0;
+            width:1000px;
+
+            position:relative;
+            padding:6px;
+            /* overflow: hidden; */
+            margin-left: 18px;
+        }
+        td,th{
+            border:1px dashed #c7bebe;
+            text-align: center;
+            padding:4px;
+            height: 22px;
+            /*   IE浏览器的高不统一*/
+
+        }
+        #each_total{
+            border:1px solid red;
+            width:500px;
+
+        }
+        .last_tr{
+            position:absolute;
+            left: 996px;
+            top:0px;
+            background:#5bc0de;
+            color:white;
+            width: 90px;
+        }
+        .erery_totals{
+            background:#5cb85c;
+            color:white;
+        }
+        .all_total{
+            background:#f10215;
+            color:white;
+        }
+        .z_c{
+            background:#5bc0de;
+            color:white;
+        }
+        .j_q{
+            background:#5cb85c;
+            color:white;
+        }
+        .j_s{
+            background:#ec971f;
+            color:white;
+        }
+        .y_d{
+            background:#56c272;
+            color:white;
+        }
+        .j_g{
+            background:#ec971f;
+            color:white;
+        }
+        #head{
+            width:979px;
+            margin-left:18px;
+
+
+        }
+        #head h3{
+            padding:4px;
+            font-size:20px;
+            text-indent:60px;
+            border-bottom:1px dashed #ccc;
+            color:red;
+        }
+        #head div{
+            float:left;
+            margin:4px;
+            padding:6px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .clearfix{zoom:1}
+        .clearfix:after{content:'';display:table;clear:both}
+        .active{
+            background:#f3181d;
+            color:white;
+        }
+        #head div.form_data{
+            /* width:60px;
+            position:absolute;
+            top: 25px;
+            left: 188px;
+            top: 23px;
+            left: 204px;*/
+        }
         .form_data a{
-          padding:6px;
-          border-radius: 4px;
-          cursor: pointer;
-          text-decoration: none;
-      } 
-      .active{
-          background:red;
-          color:white;
-      }
-      /* .everyday{
-        width: 69px;
-        border: 1px solid red;
-        position: absolute;
-        top: 62px;
-        left: 1004px;
-      } */
-      .everyday p{
-          text-align: center;
-          height:27px;
-          border-bottom:1px solid #ccc;
-	      line-height: 29px;
-      }
-      .every_sum{
-          position:absolute;
-          left: 924px;
-          top:0px;
-          background:#56c272;
-          color:white;
-         
-      }
-      .every_sum td{
-        border-left:none;
-          border-right:none;
-      }
+            padding:6px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .active{
+            background:red;
+            color:white;
+        }
+        /* .everyday{
+          width: 69px;
+          border: 1px solid red;
+          position: absolute;
+          top: 62px;
+          left: 1004px;
+        } */
+        .everyday p{
+            text-align: center;
+            height:27px;
+            border-bottom:1px solid #ccc;
+            line-height: 29px;
+        }
+        .every_sum{
+            position:absolute;
+            left: 924px;
+            top:0px;
+            background:#56c272;
+            color:white;
+
+        }
+        .every_sum td{
+            border-left:none;
+            border-right:none;
+        }
     </style>
 </head>
 <body>
-    <header id="head" class='clearfix'>
-        <h3>11月串串产量表</h3>
-        <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
-        <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
-        <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
-        <div class='form_data '><a href="data.html" class='j_q '>数据单</a>
-        </div>
-        <div id='times' class='j_g'></div>
-     </header>
-    <table id="CC_Tab">
- 
-    </table>
-    <!-- <div id="each_total">
-        <div class='niu_du'></div>
-    </div> 
-    <div class="everyday" id="everyday">
-        <p class='day day'>每天工资</p>
-        
-    </div>-->
+<header id="head" class='clearfix'>
+    <h3>11月串串产量表</h3>
+    <div class='tabs_cc tabs_wdx j_q active'>王东旭</div>
+    <div class='tabs_cc tabs_ywc j_q'>杨文常</div>
+    <div class='tabs_cc tabs_ly  j_q'>雷  燕</div>
+    <div class='form_data '><a href="data.html" class='j_q '>数据单</a>
+    </div>
+    <div id='times' class='j_g'></div>
+</header>
+<table id="CC_Tab">
+
+</table>
+<!-- <div id="each_total">
+    <div class='niu_du'></div>
+</div>
+<div class="everyday" id="everyday">
+    <p class='day day'>每天工资</p>
+
+</div>-->
 </body>
 <script>
     var arr=[];
     //CC_DATAS1  wdx
     var CC_DATAS0={
         //554
-         "1号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0
-               ],
-         "2号":[0,0,500,230,0,
-                0,230,0,0,720,
-                0,550,0,0,
-               ],
-		 "3号":[0,0,0,0,100,
-                760,400,0,410,0,
-                0,180,500,0,
-               ],
-	     "4号":[0,0,0,0,0,
-                370,100,40,0,610,
-                0,0,200,0,
-               ],
-	     "5号":[0,0,90,0,0,
-                738,200,20,0,100,
-                90,90,240,0,
-               ],
-	       "6号":[0,0,90,40,0,
-                  550,220,100,0,90,
-                  20,100,360,105,
-                 ],
-	     "7号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
-	     "8号":[0,0,90,60,80,
-                575,240,0,0,600,
-                20,183,260,0,
-               ],
-	     "9号":[75,0,0,0,50,
-                462,150,0,0,180,
-                0,440,350,0,
-               ],
-	     "10号":[200,0,130,476,0,
-                290,180,0,0,280,
-                0,260,500,0,
-               ],
-	       "11号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "12号":[0,246,0,0,40,
-                 250,400,0,1215,0,
-                 0,180,0,0,
-               ],
-	       "13号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "14号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "15号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
+        "1号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0
+        ],
+        "2号":[0,0,500,230,0,
+            0,230,0,0,720,
+            0,550,0,0,
+        ],
+        "3号":[0,0,0,0,100,
+            760,400,0,410,0,
+            0,180,500,0,
+        ],
+        "4号":[0,0,0,0,0,
+            370,100,40,0,610,
+            0,0,200,0,
+        ],
+        "5号":[0,0,90,0,0,
+            738,200,20,0,100,
+            90,90,240,0,
+        ],
+        "6号":[0,0,90,40,0,
+            550,220,100,0,90,
+            20,100,360,105,
+        ],
+        "7号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "8号":[0,0,90,60,80,
+            575,240,0,0,600,
+            20,183,260,0,
+        ],
+        "9号":[75,0,0,0,50,
+            462,150,0,0,180,
+            0,440,350,0,
+        ],
+        "10号":[200,0,130,476,0,
+            290,180,0,0,280,
+            0,260,500,0,
+        ],
+        "11号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "12号":[0,246,0,0,40,
+            250,400,0,1215,0,
+            0,180,0,0,
+        ],
+        "13号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "14号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "15号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
     }
     //CC_DATAS1  ywc
     var CC_DATAS1={
         //554
-         "1号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0
-                ],
-         "2号":[0,0,0,0,20,
-                649,580,0,0,920,
-                0,224,0,0,
-               ],
-        
-		 "3号":[0,0,0,0,80,
-                560,380,0,0,620,
-                0,140,560,0,
-               ],
-	     "4号":[0,0,0,0,0,
-                390,45,40,0,554,
-                0,0,300,100,
-               ],
-	     "5号":[0,0,90,0,0,
-                748,200,0,0,100,
-                90,90,300,0,
-               ],
-	     "6号":[0,0,90,40,0,
-                620,210,140,0,90,
-                0,120,480,100,
-               ],
-	     "7号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
-	     "8号":[280,0,90,60,120,
-                755,0,0,0,790,
-                0,120,0,0,
-               ],
-	     "9号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
-	     "10号":[540,0,0,340,0,
-                780,390,0,0,0,
-                0,0,500,0,
-               ],
-	       "11号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "12号":[0,350,0,0,80,
-                 1067,0,0,0,0,
-                 0,44,550,0,
-               ],
-	       "13号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "14号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "15号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
+        "1号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0
+        ],
+        "2号":[0,0,0,0,20,
+            649,580,0,0,920,
+            0,224,0,0,
+        ],
+
+        "3号":[0,0,0,0,80,
+            560,380,0,0,620,
+            0,140,560,0,
+        ],
+        "4号":[0,0,0,0,0,
+            390,45,40,0,554,
+            0,0,300,100,
+        ],
+        "5号":[0,0,90,0,0,
+            748,200,0,0,100,
+            90,90,300,0,
+        ],
+        "6号":[0,0,90,40,0,
+            620,210,140,0,90,
+            0,120,480,100,
+        ],
+        "7号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "8号":[280,0,90,60,120,
+            755,0,0,0,790,
+            0,120,0,0,
+        ],
+        "9号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "10号":[540,0,0,340,0,
+            780,390,0,0,0,
+            0,0,500,0,
+        ],
+        "11号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "12号":[0,350,0,0,80,
+            1067,0,0,0,0,
+            0,44,550,0,
+        ],
+        "13号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "14号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "15号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
     }
-        //CC_DATAS2 ly
+    //CC_DATAS2 ly
     var CC_DATAS2={
         //554
-         "1号":[0,380,0,280,0,
-                630,160,60,0,400,
-                0,280,0,0
-               ],
-         "2号":[0,0,0,0,0,
-                620,360,0,0,720,
-                0,390,0,0
-               ],
-         "3号":[100,0,0,0,120,
-                420,380,0,280,560,
-                0,130,480,0,
-               ],
-	     "4号":[0,0,0,0,0,
-                510,140,40,0,630,
-                0,0,170,0,
-               ],
-	     "5号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
-	     "6号":[10,0,0,0,0,
-                540,232,80,0,540,
-                0,0,440,180,
-               ],
-	     "7号":[1030,180,0,200,30,
-                200,240,0,0,0,
-                0,280,0,0,
-               ],
-	     "8号":[0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,
-               ],
-	     "9号":[80,0,0,0,50,
-                920,170,0,0,0,
-                100,160,350,0,
-               ],
-	     "10号":[540,0,100,330,0,
-                590,350,0,0,240,
-                0,140,500,0,
-               ],
-	       "11号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "12号":[0,200,20,20,40,
-                 200,150,210,0,0,
-                 0,280,680,0,
-               ],
-	       "13号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "14号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	       "15号":[0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,
-               ],
-	    
+        "1号":[0,380,0,280,0,
+            630,160,60,0,400,
+            0,280,0,0
+        ],
+        "2号":[0,0,0,0,0,
+            620,360,0,0,720,
+            0,390,0,0
+        ],
+        "3号":[100,0,0,0,120,
+            420,380,0,280,560,
+            0,130,480,0,
+        ],
+        "4号":[0,0,0,0,0,
+            510,140,40,0,630,
+            0,0,170,0,
+        ],
+        "5号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "6号":[10,0,0,0,0,
+            540,232,80,0,540,
+            0,0,440,180,
+        ],
+        "7号":[1030,180,0,200,30,
+            200,240,0,0,0,
+            0,280,0,0,
+        ],
+        "8号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "9号":[80,0,0,0,50,
+            920,170,0,0,0,
+            100,160,350,0,
+        ],
+        "10号":[540,0,100,330,0,
+            590,350,0,0,240,
+            0,140,500,0,
+        ],
+        "11号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "12号":[0,200,20,20,40,
+            200,150,210,0,0,
+            0,280,680,0,
+        ],
+        "13号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "14号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+        "15号":[0,0,0,0,0,
+            0,0,0,0,0,
+            0,0,0,0,
+        ],
+
     }
     var CC_DATA={
-         //554
-         "name":[
-             '日期/名称',
-             '牛肚','虾','海带','豆腐','鹅郡',
-             '鸭郡','黑毛肚','凤爪','豆皮','藕',
-             '笋子','木耳','土豆','西兰花'
-             ],    
+        //554
+        "name":[
+            '日期/名称',
+            '牛肚','虾','海带','豆腐','鹅郡',
+            '鸭郡','黑毛肚','凤爪','豆皮','藕',
+            '笋子','木耳','土豆','西兰花'
+        ],
     }
     arr.push(CC_DATAS0);
     arr.push(CC_DATAS1);
     arr.push(CC_DATAS2);
     var CC=document.getElementById('head');
     var allCC=CC.getElementsByTagName('div');
-    
+
     var CC_Tab=document.getElementById('CC_Tab');
     var each_total=document.getElementById('each_total');
-  
-     
+
+
     var str="";
     for(var i in CC_DATA.name){
-         str+="<th>"+CC_DATA.name[i]+"</th>"
+        str+="<th>"+CC_DATA.name[i]+"</th>"
     }
     CC_Tab.innerHTML="<tr>"+str+"</tr>";
     var ts=""
     for(var j in CC_DATAS0){
-         ts+="<tr><td>"+j+"</td>"
-           for(var k=0;k<CC_DATAS0[j].length;k++){
-               ts+="<td class='list"+k+"'>"+CC_DATAS0[j][k]+"</td>"
-           }
-          "</tr>"
+        ts+="<tr><td>"+j+"</td>"
+        for(var k=0;k<CC_DATAS0[j].length;k++){
+            ts+="<td class='list"+k+"'>"+CC_DATAS0[j][k]+"</td>"
+        }
+        "</tr>"
     }
     CC_Tab.innerHTML+=ts
-    
+
     window.onload=function(){
         obj.init()
         fn()
-    //     ftime()
-    //     var nowTds=''
-    //     var dd = ''
-    //   function ftime(){
-    //     dd = new Date().getDate();
-    //     nowTds=document.querySelectorAll('p');
-    //      //console.log(nowTds);
-    //      //console.log(nowTds[dd].innerHTML)
-    //      nowTds[dd].style.background='red'
-    //   }
-    for(var i=0;i<allCC.length;i++){
-       allCC[i].index=i;
-       allCC[i].onclick=function(){
-       
-        //console.log(nowTds[2].innerHTML)
-        
-        for(var k=0;k<allCC.length-1;k++){
-            allCC[k].className='j_q';
-            
-             
-        }
-        this.className='active';
-         
-        CC_Tab.innerHTML="";
-        var str="";
-        for(var i in CC_DATA.name){
-            str+="<th>"+CC_DATA.name[i]+"</th>"
-        }
-        CC_Tab.innerHTML="<tr>"+str+"</tr>";
-    var ts=""
-    var tem=arr[this.index];
-    for(var j in tem){
-         ts+="<tr><td>"+j+"</td>"
-           for(var k=0;k<tem[j].length;k++){
-               ts+="<td class='list"+k+"'>"+tem[j][k]+"</td>"
-           }
-          "</tr>"
-    }
-    CC_Tab.innerHTML+=ts
-    fn()
-   
-       }
-   }
-   function fn(){
-        Highlight ()
-       
-       // fx()
-        var td2=CC_Tab.getElementsByClassName('list0');
-        var td3=CC_Tab.getElementsByClassName('list1');
-        var td4=CC_Tab.getElementsByClassName('list2');
-        var td5=CC_Tab.getElementsByClassName('list3');
-        var td6=CC_Tab.getElementsByClassName('list4');
-        var td7=CC_Tab.getElementsByClassName('list5');
-        var td8=CC_Tab.getElementsByClassName('list6');
-        var td9=CC_Tab.getElementsByClassName('list7');
-        var td10=CC_Tab.getElementsByClassName('list8');
-        var td11=CC_Tab.getElementsByClassName('list9');
-        var td12=CC_Tab.getElementsByClassName('list10');
-        var td13=CC_Tab.getElementsByClassName('list11');
-        var td14=CC_Tab.getElementsByClassName('list12');
-        var td15=CC_Tab.getElementsByClassName('list13');
-        var arrTotal=[];
-         var niudu_total=new Number();
-         var xia_total=new Number();
-         var haidai_total=new Number();
-         var doufu_total=new Number();
-         var erjun_total=new Number();
-         var yajun_total=new Number();
-         var heimaodu_total=new Number();
-         var fengzhua_total=new Number();
-         var doupi_total=new Number();
-         var ou_total=new Number();
-         var sunzi_total=new Number();
-         var muer_total=new Number();
-         var tudou_total=new Number();
-         var xilanhua_total=new Number();
-         var dantian=new Array();
-         var dantianjson={
-              "td2":[],
-              "td3":[],
-              "td4":[],
-              "td5":[],
-              "td6":[],
-              "td7":[],
-              "td8":[],
-              "td9":[],
-              "td10":[],
-              "td11":[],
-              "td12":[],
-              "td13":[],
-              "td14":[],
-              "td15":[],
-              };
+        //     ftime()
+        //     var nowTds=''
+        //     var dd = ''
+        //   function ftime(){
+        //     dd = new Date().getDate();
+        //     nowTds=document.querySelectorAll('p');
+        //      //console.log(nowTds);
+        //      //console.log(nowTds[dd].innerHTML)
+        //      nowTds[dd].style.background='red'
+        //   }
+        for(var i=0;i<allCC.length;i++){
+            allCC[i].index=i;
+            allCC[i].onclick=function(){
 
-        for(var i=0;i<td2.length;i++){
-            dantianjson['td2'].push(td2[i].innerHTML)
+                //console.log(nowTds[2].innerHTML)
 
-            niudu_total+=parseFloat(td2[i].innerHTML);
-        }
-        
-        //console.log(dantian)
-        
-        for(var i=0;i<td3.length;i++){
-            dantianjson['td3'].push(td3[i].innerHTML)
+                for(var k=0;k<allCC.length-1;k++){
+                    allCC[k].className='j_q';
 
-             xia_total+=parseFloat(td3[i].innerHTML);
-        }
-        for(var i=0;i<td4.length;i++){
-            dantianjson['td4'].push(td4[i].innerHTML)
 
-             haidai_total+=parseFloat(td4[i].innerHTML);
-        }
-        for(var i=0;i<td5.length;i++){
-            dantianjson['td5'].push(td5[i].innerHTML)
+                }
+                this.className='active';
 
-            doufu_total+=parseFloat(td5[i].innerHTML);
-        }
-        for(var i=0;i<td6.length;i++){
-            dantianjson['td6'].push(td6[i].innerHTML)
+                CC_Tab.innerHTML="";
+                var str="";
+                for(var i in CC_DATA.name){
+                    str+="<th>"+CC_DATA.name[i]+"</th>"
+                }
+                CC_Tab.innerHTML="<tr>"+str+"</tr>";
+                var ts=""
+                var tem=arr[this.index];
+                for(var j in tem){
+                    ts+="<tr><td>"+j+"</td>"
+                    for(var k=0;k<tem[j].length;k++){
+                        ts+="<td class='list"+k+"'>"+tem[j][k]+"</td>"
+                    }
+                    "</tr>"
+                }
+                CC_Tab.innerHTML+=ts
+                fn()
 
-            erjun_total+=parseFloat(td6[i].innerHTML);
+            }
         }
-        for(var i=0;i<td7.length;i++){
-            dantianjson['td7'].push(td7[i].innerHTML)
+        function fn(){
+            Highlight ()
 
-            yajun_total+=parseFloat(td7[i].innerHTML);
-        }
-        for(var i=0;i<td8.length;i++){
-            dantianjson['td8'].push(td8[i].innerHTML)
+            // fx()
+            var td2=CC_Tab.getElementsByClassName('list0');
+            var td3=CC_Tab.getElementsByClassName('list1');
+            var td4=CC_Tab.getElementsByClassName('list2');
+            var td5=CC_Tab.getElementsByClassName('list3');
+            var td6=CC_Tab.getElementsByClassName('list4');
+            var td7=CC_Tab.getElementsByClassName('list5');
+            var td8=CC_Tab.getElementsByClassName('list6');
+            var td9=CC_Tab.getElementsByClassName('list7');
+            var td10=CC_Tab.getElementsByClassName('list8');
+            var td11=CC_Tab.getElementsByClassName('list9');
+            var td12=CC_Tab.getElementsByClassName('list10');
+            var td13=CC_Tab.getElementsByClassName('list11');
+            var td14=CC_Tab.getElementsByClassName('list12');
+            var td15=CC_Tab.getElementsByClassName('list13');
+            var arrTotal=[];
+            var niudu_total=new Number();
+            var xia_total=new Number();
+            var haidai_total=new Number();
+            var doufu_total=new Number();
+            var erjun_total=new Number();
+            var yajun_total=new Number();
+            var heimaodu_total=new Number();
+            var fengzhua_total=new Number();
+            var doupi_total=new Number();
+            var ou_total=new Number();
+            var sunzi_total=new Number();
+            var muer_total=new Number();
+            var tudou_total=new Number();
+            var xilanhua_total=new Number();
+            var dantian=new Array();
+            var dantianjson={
+                "td2":[],
+                "td3":[],
+                "td4":[],
+                "td5":[],
+                "td6":[],
+                "td7":[],
+                "td8":[],
+                "td9":[],
+                "td10":[],
+                "td11":[],
+                "td12":[],
+                "td13":[],
+                "td14":[],
+                "td15":[],
+            };
 
-            heimaodu_total+=parseFloat(td8[i].innerHTML);
-        }
-        for(var i=0;i<td9.length;i++){
-            dantianjson['td9'].push(td9[i].innerHTML)
+            for(var i=0;i<td2.length;i++){
+                dantianjson['td2'].push(td2[i].innerHTML)
 
-             fengzhua_total+=parseFloat(td9[i].innerHTML);
-        }
-        for(var i=0;i<td10.length;i++){
-            dantianjson['td10'].push(td10[i].innerHTML)
+                niudu_total+=parseFloat(td2[i].innerHTML);
+            }
 
-            doupi_total+=parseFloat(td10[i].innerHTML);
-        }
-        for(var i=0;i<td11.length;i++){
-            dantianjson['td11'].push(td11[i].innerHTML)
+            //console.log(dantian)
 
-            ou_total+=parseFloat(td11[i].innerHTML);
-        }
-        
-        for(var i=0;i<td12.length;i++){
-            dantianjson['td12'].push(td12[i].innerHTML)
+            for(var i=0;i<td3.length;i++){
+                dantianjson['td3'].push(td3[i].innerHTML)
 
-             sunzi_total+=parseFloat(td12[i].innerHTML);
-        }
-        for(var i=0;i<td13.length;i++){
-            dantianjson['td13'].push(td13[i].innerHTML)
+                xia_total+=parseFloat(td3[i].innerHTML);
+            }
+            for(var i=0;i<td4.length;i++){
+                dantianjson['td4'].push(td4[i].innerHTML)
 
-             muer_total+=parseFloat(td13[i].innerHTML);
-        }
-        for(var i=0;i<td14.length;i++){
-            dantianjson['td14'].push(td14[i].innerHTML)
+                haidai_total+=parseFloat(td4[i].innerHTML);
+            }
+            for(var i=0;i<td5.length;i++){
+                dantianjson['td5'].push(td5[i].innerHTML)
 
-            
-            tudou_total+=parseFloat(td14[i].innerHTML);
-        }
-        for(var i=0;i<td15.length;i++){
-            dantianjson['td15'].push(td15[i].innerHTML)
+                doufu_total+=parseFloat(td5[i].innerHTML);
+            }
+            for(var i=0;i<td6.length;i++){
+                dantianjson['td6'].push(td6[i].innerHTML)
 
-           
-            xilanhua_total+=parseFloat(td15[i].innerHTML);
-        }
+                erjun_total+=parseFloat(td6[i].innerHTML);
+            }
+            for(var i=0;i<td7.length;i++){
+                dantianjson['td7'].push(td7[i].innerHTML)
 
-          //------------
-         
-          function newarrs(d){
-              
-          var sday=new Array();
-          //console.log(dantianjson)
-          for(var i in dantianjson){//td2 td3....
-            sday.push(dantianjson[i][d])
-             //console.log(dantianjson[i][1])
-             
-          }
-          //每一天的每个产品数：
-          // console.log(arrday1)
-          return sday;
-        }
-          
-          function ds(arreveryday){
+                yajun_total+=parseFloat(td7[i].innerHTML);
+            }
+            for(var i=0;i<td8.length;i++){
+                dantianjson['td8'].push(td8[i].innerHTML)
+
+                heimaodu_total+=parseFloat(td8[i].innerHTML);
+            }
+            for(var i=0;i<td9.length;i++){
+                dantianjson['td9'].push(td9[i].innerHTML)
+
+                fengzhua_total+=parseFloat(td9[i].innerHTML);
+            }
+            for(var i=0;i<td10.length;i++){
+                dantianjson['td10'].push(td10[i].innerHTML)
+
+                doupi_total+=parseFloat(td10[i].innerHTML);
+            }
+            for(var i=0;i<td11.length;i++){
+                dantianjson['td11'].push(td11[i].innerHTML)
+
+                ou_total+=parseFloat(td11[i].innerHTML);
+            }
+
+            for(var i=0;i<td12.length;i++){
+                dantianjson['td12'].push(td12[i].innerHTML)
+
+                sunzi_total+=parseFloat(td12[i].innerHTML);
+            }
+            for(var i=0;i<td13.length;i++){
+                dantianjson['td13'].push(td13[i].innerHTML)
+
+                muer_total+=parseFloat(td13[i].innerHTML);
+            }
+            for(var i=0;i<td14.length;i++){
+                dantianjson['td14'].push(td14[i].innerHTML)
+
+
+                tudou_total+=parseFloat(td14[i].innerHTML);
+            }
+            for(var i=0;i<td15.length;i++){
+                dantianjson['td15'].push(td15[i].innerHTML)
+
+
+                xilanhua_total+=parseFloat(td15[i].innerHTML);
+            }
+
+            //------------
+
+            function newarrs(d){
+
+                var sday=new Array();
+                //console.log(dantianjson)
+                for(var i in dantianjson){//td2 td3....
+                    sday.push(dantianjson[i][d])
+                    //console.log(dantianjson[i][1])
+
+                }
+                //每一天的每个产品数：
+                // console.log(arrday1)
+                return sday;
+            }
+
+            function ds(arreveryday){
+                var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+                var daytotalst=new Number();
+
+                //console.log(arrday1)
+                var priceTotals=new Array();
+                for(var u=0;u<arreveryday.length;u++){
+                    priceTotals.push((arreveryday[u]*parseInt(arrjq[u]))/100);
+                }
+                for(var i=0;i<priceTotals.length;i++){
+                    daytotalst+=parseFloat(priceTotals[i])
+                }
+                //console.log( priceTotals)
+                //console.log( daytotalst) //每天总工资
+                return daytotalst;
+            }
+            fx()
+            function fx(){
+                var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+
+                var j=new Number();
+                //everyday.innerHTML="<p class='day day'>每天工资</p>";
+
+                var len=CC_DATAS0;
+                var lens=[]
+                for(var i in len){
+
+                    lens.push(i)
+                }
+
+                var strts="";
+                strts+="<tbody class='every_sum'><tr><td>每天工资</td></tr>"
+                for(var i=0;i<lens.length;i++){
+
+                    j=newarrs(parseInt(i))
+                    //console.log(j)
+                    //console.log(parseInt(i))
+                    //console.log(ds(j))
+
+                    //everyday.innerHTML+="<p class='day day"+parseInt(i)+"'>"+fixNumberDecimalDigits(ds(j))+"</p>"
+                    strts+="<tr class='day '><td class='today"+parseInt(i+1)+"'>"+fixNumberDecimalDigits(ds(j))+"</td></tr>"
+                }
+                strts+='</tbody>'
+                CC_Tab.innerHTML+=strts;
+            }
+            //Math.round(ds(j))
+            //var j=newarrs(0)//第一天
+            //console.log(ds(j)) ///单天总工资
+            //<p class='day day1'>84.7</p>
+
+
+            //--------------------------
+            arrTotal.push(niudu_total)
+            arrTotal.push(xia_total)
+            arrTotal.push(haidai_total)
+            arrTotal.push(doufu_total)
+            arrTotal.push(erjun_total)
+            arrTotal.push(yajun_total)
+            arrTotal.push(heimaodu_total)
+            arrTotal.push(fengzhua_total)
+            arrTotal.push(doupi_total)
+            arrTotal.push(ou_total)
+            arrTotal.push(sunzi_total)
+            arrTotal.push(muer_total)
+            arrTotal.push(tudou_total)
+            arrTotal.push(xilanhua_total)
+
+            var str_z='';
+            var str_num=new Number;
+            for(var i=0;i<arrTotal.length;i++){
+                str_z+="<th>"+arrTotal[i]+"</th>";
+                str_num+=arrTotal[i];
+            }
+
+            CC_Tab.innerHTML+="<tr class='z_c'><th>单总</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
+            var all_total=document.getElementById('all_total');
+
+            all_total.innerHTML=parseFloat(str_num);
             var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
-            var daytotalst=new Number();
-          
-            //console.log(arrday1)
-         var priceTotals=new Array();
-         for(var u=0;u<arreveryday.length;u++){
-            priceTotals.push((arreveryday[u]*parseInt(arrjq[u]))/100);
-         }
-         for(var i=0;i<priceTotals.length;i++){
-            daytotalst+=parseFloat(priceTotals[i])
-         }
-         //console.log( priceTotals)
-         //console.log( daytotalst) //每天总工资
-         return daytotalst;
-          }
-          fx()
-          function fx(){
-            var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
-            
-            var j=new Number();
-            //everyday.innerHTML="<p class='day day'>每天工资</p>";
-           
+            var str_jq='';
+            for(var i=0;i<arrjq.length;i++){
+                str_jq+="<th>"+arrjq[i]+"</th>"
+            }
+            CC_Tab.innerHTML+="<tr class='j_s'><th>工价</th>"+str_jq+"</tr>"
+            //console.log(arrTotal)
+            var priceTotal=new Array();
+            for(var u=0;u<arrTotal.length;u++){
+                priceTotal.push((arrTotal[u]*parseInt(arrjq[u]))/100);
+            }
+            //console.log(priceTotal)
+            //总工资一栏
+            var str_price_total='';
+            var str_salary=new Number();
+            for(var i=0;i<priceTotal.length;i++){
+                str_price_total+="<th>"+priceTotal[i]+"</th>";
+                str_salary+=priceTotal[i];
+            }
+            //console.log(str_price_total)
+            CC_Tab.innerHTML+="<tr class='y_d'><th>工资</th>"+str_price_total+"<td id='end_salary' class='end_salary all_total'>3000</td></tr>"
+            var end_salary=document.getElementById('end_salary');
+
+            end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
+            var each_tr=CC_Tab.getElementsByTagName("tr");
+            var each_total=[]; //ha
             var len=CC_DATAS0;
             var lens=[]
             for(var i in len){
-                
-                 lens.push(i)
-            }
-             
-           var strts="";
-           strts+="<tbody class='every_sum'><tr><td>每天工资</td></tr>"
-          for(var i=0;i<lens.length;i++){
-           
-            j=newarrs(parseInt(i))
-            //console.log(j)
-              //console.log(parseInt(i))
-              //console.log(ds(j))
-             
-              //everyday.innerHTML+="<p class='day day"+parseInt(i)+"'>"+fixNumberDecimalDigits(ds(j))+"</p>"
-              strts+="<tr class='day '><td class='today"+parseInt(i+1)+"'>"+fixNumberDecimalDigits(ds(j))+"</td></tr>"
-          }
-          strts+='</tbody>'
-          CC_Tab.innerHTML+=strts;
-         }
-           //Math.round(ds(j))
-           //var j=newarrs(0)//第一天
-            //console.log(ds(j)) ///单天总工资
-          //<p class='day day1'>84.7</p>
 
-
-          //--------------------------
-         arrTotal.push(niudu_total)
-         arrTotal.push(xia_total)
-         arrTotal.push(haidai_total)
-         arrTotal.push(doufu_total)
-         arrTotal.push(erjun_total)
-         arrTotal.push(yajun_total)
-         arrTotal.push(heimaodu_total)
-         arrTotal.push(fengzhua_total)
-         arrTotal.push(doupi_total)
-         arrTotal.push(ou_total)
-         arrTotal.push(sunzi_total)
-         arrTotal.push(muer_total)
-         arrTotal.push(tudou_total)
-         arrTotal.push(xilanhua_total)
-        
-         var str_z='';
-         var str_num=new Number;
-              for(var i=0;i<arrTotal.length;i++){
-                str_z+="<th>"+arrTotal[i]+"</th>";
-                str_num+=arrTotal[i];
-              }
-            
-         CC_Tab.innerHTML+="<tr class='z_c'><th>单总</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
-         var all_total=document.getElementById('all_total');
-         
-         all_total.innerHTML=parseFloat(str_num);
-        var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
-        var str_jq='';
-              for(var i=0;i<arrjq.length;i++){
-                str_jq+="<th>"+arrjq[i]+"</th>"
-              }
-         CC_Tab.innerHTML+="<tr class='j_s'><th>工价</th>"+str_jq+"</tr>"
-         //console.log(arrTotal)
-         var priceTotal=new Array();
-         for(var u=0;u<arrTotal.length;u++){
-            priceTotal.push((arrTotal[u]*parseInt(arrjq[u]))/100);
-         }
-         //console.log(priceTotal)
-         //总工资一栏
-         var str_price_total='';
-         var str_salary=new Number();
-              for(var i=0;i<priceTotal.length;i++){
-                str_price_total+="<th>"+priceTotal[i]+"</th>";
-                str_salary+=priceTotal[i];
-              }
-              //console.log(str_price_total)
-         CC_Tab.innerHTML+="<tr class='y_d'><th>工资</th>"+str_price_total+"<td id='end_salary' class='end_salary all_total'>3000</td></tr>"
-         var end_salary=document.getElementById('end_salary');
-
-      end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
-         var each_tr=CC_Tab.getElementsByTagName("tr");
-         var each_total=[]; //ha
-         var len=CC_DATAS0;
-            var lens=[]
-            for(var i in len){
-                
-                 lens.push(i)
+                lens.push(i)
             }
             //console.log(lens.length)
-         //for(var i=1;i<each_tr.length-13;i++){
-             for(var i=1;i<lens.length+1;i++){
-            var each_td=each_tr[i].getElementsByTagName("td");
-            let num_total=new Number();
-            for(var j=1;j<each_td.length;j++){
-                num_total+=parseFloat(each_td[j].innerHTML)
+            //for(var i=1;i<each_tr.length-13;i++){
+            for(var i=1;i<lens.length+1;i++){
+                var each_td=each_tr[i].getElementsByTagName("td");
+                let num_total=new Number();
+                for(var j=1;j<each_td.length;j++){
+                    num_total+=parseFloat(each_td[j].innerHTML)
+                }
+                //每天的总数
+                each_total.push(num_total)
+                //console.log(each_total.length)
             }
-            //每天的总数
-           each_total.push(num_total)
-           //console.log(each_total.length)
-         }
-         //一共的总数
-        var last_tr='';
-        for(var i=0;i<1;i++){
-             last_tr+="<tbody class='last_tr'><tr><td>每天总串数</td></tr>"
-              for(var j=0;j<each_total.length;j++){
-                last_tr+="<tr class='each_total'><td class='today"+parseInt(j+1)+"'>"+each_total[j]+"</td></tr>"
-              }
-             last_tr+='</tbody>'
-            CC_Tab.innerHTML+=last_tr
-        }
-        var everySum=document.querySelector('.every_sum');
-    var lastTr=document.querySelector('.last_tr');
-    var everySumTd=document.querySelectorAll('td');
-    var lastTrTd=document.querySelectorAll('td');
-    var d = new Date().getDate();
-    for(var i=0;i<everySumTd.length;i++){
-        if(everySumTd[i].className=='today'+d){      
-            everySumTd[i].parentNode.style.background='red';
-            everySumTd[i].parentNode.style.color='white';
-         }
-          
-    }
-    }
-   
-    
-     
-    }//window.onload   
-          //函数封装 0.1+0.2=0.3333的问题
-          function fixNumberDecimalDigits(number, digits) {
-            var formatNumber = parseFloat(number);
-            if (isNaN(formatNumber)) return false;
-            var digits = digits || 2;
-            formatNumber = formatNumber.toString();
-            var reg = new RegExp('([0-9]+.[0-9]{' + digits +'})[0-9]*');
-            var stringNumber = formatNumber.replace(reg, "$1");
-            var decimalPosition = stringNumber.indexOf('.');
-            if (decimalPosition < 0) {
-                decimalPosition = stringNumber.length;
-                stringNumber += '.';
+            //一共的总数
+            var last_tr='';
+            for(var i=0;i<1;i++){
+                last_tr+="<tbody class='last_tr'><tr><td>每天总串数</td></tr>"
+                for(var j=0;j<each_total.length;j++){
+                    last_tr+="<tr class='each_total'><td class='today"+parseInt(j+1)+"'>"+each_total[j]+"</td></tr>"
+                }
+                last_tr+='</tbody>'
+                CC_Tab.innerHTML+=last_tr
             }
-            while (stringNumber.length <= decimalPosition + digits) {
-                stringNumber += '0';
-            }
-            return stringNumber;
-
-         
-        }
-        //var a = 0.1,
-        //b = 0.2,
-        //c = a + b ;
-        //console.log(fixNumberDecimalDigits(str_salary, 1))
-         //当天颜色高亮 #f0ad4e
-        function Highlight (){ 
+            var everySum=document.querySelector('.every_sum');
+            var lastTr=document.querySelector('.last_tr');
+            var everySumTd=document.querySelectorAll('td');
+            var lastTrTd=document.querySelectorAll('td');
             var d = new Date().getDate();
-            var nowTd=document.querySelectorAll('td');
-            var nowTds=document.querySelectorAll('p');
-            
+            for(var i=0;i<everySumTd.length;i++){
+                if(everySumTd[i].className=='today'+d){
+                    everySumTd[i].parentNode.style.background='red';
+                    everySumTd[i].parentNode.style.color='white';
+                }
 
-             //console.log(everySum)
-                //console.log(nowTd.length)
-                for(var i=0;i<nowTd.length;i++){
-                    if(nowTd[i].innerHTML==d+'号'){
-                    nowTd[i].parentNode.style.background='red';
-                    nowTd[i].parentNode.style.color='white';
-                        
-                   }
-                   //console.log(nowTd[i].className)
-                  
             }
         }
-        //倒计时：
-        var obj={
-         times:'Feb 5,2019 0:0:0',
-         oInput:',',
-         timer:null,
-         newDate:null,
-         olddate:null,
-         chaDate:null,
-         intervel:1000,
-         str:'',
-         init:function(){
-              //this.oInput=document.getElementsByTagName('input');
-              this.timer=setInterval(this.fnMove.bind(this),500);
-         },fnMove:function(){
+
+
+
+    }//window.onload
+    //函数封装 0.1+0.2=0.3333的问题
+    function fixNumberDecimalDigits(number, digits) {
+        var formatNumber = parseFloat(number);
+        if (isNaN(formatNumber)) return false;
+        var digits = digits || 2;
+        formatNumber = formatNumber.toString();
+        var reg = new RegExp('([0-9]+.[0-9]{' + digits +'})[0-9]*');
+        var stringNumber = formatNumber.replace(reg, "$1");
+        var decimalPosition = stringNumber.indexOf('.');
+        if (decimalPosition < 0) {
+            decimalPosition = stringNumber.length;
+            stringNumber += '.';
+        }
+        while (stringNumber.length <= decimalPosition + digits) {
+            stringNumber += '0';
+        }
+        return stringNumber;
+
+
+    }
+    //var a = 0.1,
+    //b = 0.2,
+    //c = a + b ;
+    //console.log(fixNumberDecimalDigits(str_salary, 1))
+    //当天颜色高亮 #f0ad4e
+    function Highlight (){
+        var d = new Date().getDate();
+        var nowTd=document.querySelectorAll('td');
+        var nowTds=document.querySelectorAll('p');
+
+
+        //console.log(everySum)
+        //console.log(nowTd.length)
+        for(var i=0;i<nowTd.length;i++){
+            if(nowTd[i].innerHTML==d+'号'){
+                nowTd[i].parentNode.style.background='red';
+                nowTd[i].parentNode.style.color='white';
+
+            }
+            //console.log(nowTd[i].className)
+
+        }
+    }
+    //倒计时：
+    var obj={
+        times:'Feb 5,2019 0:0:0',
+        oInput:',',
+        timer:null,
+        newDate:null,
+        olddate:null,
+        chaDate:null,
+        intervel:1000,
+        str:'',
+        init:function(){
+            //this.oInput=document.getElementsByTagName('input');
+            this.timer=setInterval(this.fnMove.bind(this),500);
+        },fnMove:function(){
             //this.oInput[1].value='';
             this.newDate=new Date(this.times);
             //this.newDate=new Date(this.oInput[0].value);
@@ -836,29 +838,29 @@ body{
             times.innerHTML=this.str;
         },
         toFn:function(n){
-              return n<10?'0'+n:''+n;
+            return n<10?'0'+n:''+n;
         }
     };
- 
- //setInterval(function(){
-     
-  //},1000)
-/*
-一月 Jan. January
-二月 Feb. February
-三月 Mar. March
-四月 Apr. April
-五月 May. May
-六月 June. June
-七月 July. July
-八月 Aug. Aguest
-九月 Sept. September
-十月 Oct. October
-十一月 Nov. November
-十二月 Dec. December
-*/
+
+    //setInterval(function(){
+
+    //},1000)
+    /*
+    一月 Jan. January
+    二月 Feb. February
+    三月 Mar. March
+    四月 Apr. April
+    五月 May. May
+    六月 June. June
+    七月 July. July
+    八月 Aug. Aguest
+    九月 Sept. September
+    十月 Oct. October
+    十一月 Nov. November
+    十二月 Dec. December
+    */
 
 
- 
+
 </script>
 </html>
