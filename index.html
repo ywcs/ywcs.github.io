@@ -198,14 +198,14 @@
 </head>
 <body>
 	<div class='tabs_cc tabs_ywc j_q top'><a href="">2019年2月<br/>串串产量表</a></div>
-    
+
 <header id="head" class='clearfix'>
 	<div class='tabs_cc tabs_wdx j_q active'>杨文常</div>
     <div class='tabs_cc tabs_ywc j_q'>雷燕</div>
  
    <!-- <div class='form_data '><a href="data.html" class='j_q '>数据单</a>-->
     </div>
-    <!-- <div id='times' class='j_g'></div> -->
+    <div id='times' class='j_g'></div>
 </header>
 <table id="CC_Tab">
 
@@ -450,13 +450,15 @@
             }
 
             function ds(arreveryday){
-                var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
+                var arrjq=['3分','3分','3分','3分',
+                    '3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
                 var daytotalst=new Number();
 
                 //console.log(arrday1)
                 var priceTotals=new Array();
                 for(var u=0;u<arreveryday.length;u++){
-                    priceTotals.push((arreveryday[u]*parseInt(arrjq[u]))/100);
+                    //每天工资算法
+                    priceTotals.push((arreveryday[u]*20*parseInt(arrjq[u]))/100);
                 }
                 for(var i=0;i<priceTotals.length;i++){
                     daytotalst+=parseFloat(priceTotals[i])
@@ -525,7 +527,7 @@
 
             CC_Tab.innerHTML+="<tr class='z_c'><th>单总</th>"+str_z+"<th id='all_total' class='all_total'></th></tr>"
             var all_total=document.getElementById('all_total');
-
+ 
             all_total.innerHTML=parseFloat(str_num);
             var arrjq=['3分','3分','3分','3分','3分','6分','4分','5分','3分','3分','3分','6分','3分','3分']
             var str_jq='';
@@ -543,14 +545,18 @@
             var str_price_total='';
             var str_salary=new Number();
             for(var i=0;i<priceTotal.length;i++){
-                str_price_total+="<th>"+priceTotal[i]+"</th>";
-                str_salary+=priceTotal[i];
+            	//单总工资算法：
+                str_price_total+="<th>"+(priceTotal[i]*20).toFixed(2)+"</th>";
+                str_salary+=priceTotal[i]*20; //总工资算法：
+                //console.log(priceTotal[i]*20)
             }
             //console.log(str_price_total)
             CC_Tab.innerHTML+="<tr class='y_d'><th>工资</th>"+str_price_total+"<td id='end_salary' class='end_salary all_total'>3000</td></tr>"
+           
             var end_salary=document.getElementById('end_salary');
 
-            end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);
+ end_salary.innerHTML=str_salary.toFixed(2); //全总工资          //end_salary.innerHTML=fixNumberDecimalDigits(str_salary, 2);//2表示保留2位小数
+             //console.log(str_salary)
             var each_tr=CC_Tab.getElementsByTagName("tr");
             var each_total=[]; //ha
             var len=CC_DATAS0;
@@ -565,21 +571,28 @@
                 var each_td=each_tr[i].getElementsByTagName("td");
                 let num_total=new Number();
                 for(var j=1;j<each_td.length;j++){
-                    num_total+=parseFloat(each_td[j].innerHTML)
+                    //每天总串数算法：
+                    num_total+=parseFloat(each_td[j].innerHTML)*20
                 }
                 //每天的总数
                 each_total.push(num_total)
-                //console.log(each_total.length)
+               // console.log(num_total)
             }
-            //一共的总数
+            //
             var last_tr='';
+            var last_s=new Number();
             for(var i=0;i<1;i++){
                 last_tr+="<tbody class='last_tr'><tr><td>每天总串数</td></tr>"
                 for(var j=0;j<each_total.length;j++){
                     last_tr+="<tr class='each_total'><td class='today"+parseInt(j+1)+"'>"+each_total[j]+"</td></tr>"
+                    last_s+=parseFloat(each_total[j])
                 }
+                last_tr+='<tr ><td>'+last_s+'</td></tr>';
                 last_tr+='</tbody>'
                 CC_Tab.innerHTML+=last_tr
+                 console.log(last_s)
+                 
+                 
             }
             var everySum=document.querySelector('.every_sum');
             var lastTr=document.querySelector('.last_tr');
@@ -643,7 +656,7 @@
     }
     //倒计时：
     var obj={
-        times:'Feb 4,2019 0:0:0',
+        times:'Jan 24,2020 0:0:0',
         oInput:',',
         timer:null,
         newDate:null,
@@ -664,7 +677,7 @@
             var h=Math.floor(this.chaDate%86400/3600);
             var m=Math.floor(this.chaDate%86400%3600/60);
             var s=Math.floor(this.chaDate%60);
-            this.str="距离过年还有："+this.toFn(d)+'天'+this.toFn(h)+'时'+this.toFn(m)+'分'+this.toFn(s)+'秒';
+            this.str="距离2020年过年还有："+this.toFn(d)+'天'+this.toFn(h)+'时'+this.toFn(m)+'分'+this.toFn(s)+'秒';
             //this.oInput[1].value+=this.str;
             //console.log(this.str)
             times.innerHTML=this.str;
